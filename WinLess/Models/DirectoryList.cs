@@ -147,6 +147,8 @@ namespace WinLess.Models
                     fileSystemWatcher.Filter = "*.*";
                     fileSystemWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.LastAccess | NotifyFilters.FileName | NotifyFilters.Size | NotifyFilters.CreationTime | NotifyFilters.Attributes;
                     fileSystemWatcher.Changed += FileSystemWatcher_Changed;
+                    fileSystemWatcher.Created += FileSystemWatcher_Changed;
+                    fileSystemWatcher.Renamed += FileSystemWatcher_Changed;
                     fileSystemWatcher.EnableRaisingEvents = true;
 
                     fileSystemWatchers.Add(fileSystemWatcher);
